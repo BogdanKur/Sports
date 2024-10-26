@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="7dp"
+    android:background="@color/tiffany"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <Button
+        android:id="@+id/btnOpenOpinion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:textAllCaps="false"
+        android:gravity="start"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Название упражнения"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvCategoryExercise"
+        android:textColor="@color/black"
+        android:layout_gravity="bottom"
+        android:textSize="17sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/tvGroupMuscles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Руки"
+        android:textColor="@color/black"
+        android:layout_gravity="bottom"
+        android:textSize="17sp"
+        android:layout_marginStart="105dp"
+        android:layout_marginBottom="15dp"/>
+    <TextView
+        android:id="@+id/tvMuscle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Бицепс"
+        android:textColor="@color/black"
+        android:layout_gravity="bottom"
+        android:textSize="17sp"
+        android:layout_marginStart="165dp"
+        android:layout_marginBottom="15dp"/>
+</FrameLayout>
