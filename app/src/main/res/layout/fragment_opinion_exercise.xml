@@ -17,13 +17,18 @@
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/vvExercise"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="300dp" />
     <TextView
         android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textColor="@color/black"/>
-
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

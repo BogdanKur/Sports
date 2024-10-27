@@ -29,7 +29,6 @@ import java.net.URL
 class ExerciseListFragment : Fragment() {
     private var _binding: FragmentExerciseListBinding? = null
     private val binding get() = _binding!!
-    private val imageLinksList = mutableMapOf<String, String>()
     lateinit var viewModel: ExerciseListViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -90,17 +89,10 @@ class ExerciseListFragment : Fragment() {
             val fileName = file.getString("name")
             val mimeType = file.getString("mimeType")
             when {
-                mimeType.startsWith("image/") -> {
-                    val imageLink = "https://drive.google.com/uc?id=$fileId"
-                    imageLinksList.put(fileName, imageLink)
-                    viewModel.updateExerciseImage(fileName.replace(".jpg", ""), imageLink)
-                }
                 mimeType.startsWith("video/") -> {
                     val videoLink = "https://drive.google.com/uc?id=$fileId"
-                    imageLinksList.put(fileName, videoLink)
                     viewModel.updateExerciseImage(fileName.replace(".mp4", ""), videoLink)
                     saveVideoToCache(requireContext(), videoLink, fileName.replace(".mp4", ""))
-                    Log.e("videoooALSA", videoLink)
                 }
             }
         }

@@ -35,6 +35,7 @@ class ExerciseListAdapter(val listOfExercises: List<Exercise>, val navController
                 putString("GROUPMUSCLE", listOfExercises[position].groupMuscle)
                 putString("MUSCLE", listOfExercises[position].muscle)
                 putString("IMAGE", listOfExercises[position].imageExercise)
+                putString("DESCRIPTION", listOfExercises[position].description)
             }
             navController.navigate(R.id.action_exerciseListFragment_to_opinionExerciseFragment, bundle)
         }

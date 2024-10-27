@@ -21,6 +21,7 @@ import com.example.sportsexercises.databinding.FragmentOpinionExerciseBinding
 import com.google.android.exoplayer2.DefaultLoadControl
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -37,6 +38,7 @@ class OpinionExerciseFragment : Fragment() {
     var groupMuscle = ""
     var muscle = ""
     var imageExercise = ""
+    var description = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,11 +62,14 @@ class OpinionExerciseFragment : Fragment() {
             name = bundle.getString("NAME").toString()
             groupMuscle = bundle.getString("GROUPMUSCLE").toString()
             muscle = bundle.getString("MUSCLE").toString()
+            description = bundle.getString("DESCRIPTION").toString()
             imageExercise = bundle.getString("IMAGE").toString()
             binding.tvName.text = name
+            binding.tvDescription.text = description
 
             val cachedVideo = context?.let { getVideoFromCache(it, name) }
             if (cachedVideo != null) {
+                player.repeatMode = Player.REPEAT_MODE_ONE
                 val videoUri = Uri.fromFile(cachedVideo)
                 player.setMediaItem(MediaItem.fromUri(videoUri))
                 player.prepare()
